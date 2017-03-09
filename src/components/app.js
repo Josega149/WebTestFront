@@ -15,21 +15,12 @@ class App extends Component {
             encabezado:'WELCOME TO FLIKRAMU',
             tema:'',
             vaEscribiendo:''
-            matriz:'';
         }
     }
 
-    agregarMatriz()
-    {
-      this.setState({matriz:
-        <div className="col-md-10" id='jumbo'>
-              <MatrizFotos tema={this.state.tema}/>
-        </div>}
-      );
-    }
     clickPrimary()
     {
-      this.setState({tema:vaEscribiendo}, ()=>{agregarMatriz});
+      this.setState({tema:this.state.vaEscribiendo});
     }
     escribe(texto)
     {
@@ -37,14 +28,18 @@ class App extends Component {
       this.setState({vaEscribiendo:texto});
     }
     render() {
-
+      var matriz;
+      if(this.state.tema!=='')
+      {
+        matriz=(<MatrizFotos tema={this.state.tema}/>);
+      }
         return (
             <div>
                 <row className='row'>
-                    <Encabezado text={this.state.encabezado}/>
+                    <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado text="Rainbow: look for something"/>
+                    <Encabezado text="Search" cuantos="3"/>
                 </row>
                 <row className='row'>
                     <Input name="titulo" type="text"  onTextInput={this.escribe}
@@ -57,7 +52,9 @@ class App extends Component {
                 </row>
                 <row className='row'>
                     <div className="col-md-1"></div>
-                    {matriz}
+                    <div className="col-md-10" id='jumbo'>
+                          {matriz}
+                    </div>
                     <div className="col-md-1"><br/><br/><br/><br/></div>
               </row>
 

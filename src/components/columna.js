@@ -14,20 +14,11 @@ class Columna extends Component {
 
   traerFotos()
   {
-    axios.post(ROOT_URL + "/flickr/"+this.state.color, {
-    nickName: this.props.username,
-    password: this.props.password,
-    folder: 'Favoritos',
-    recipe: {
-              tipo: 1,
-              likes: 0,
-              creadaPor: this.props.username,
-              title: this.state.title,
-              description: this.state.description,
-              pictureGif: this.state.pictureGif,
-              Ingredients:this.state.ingredients
-            }
-    });
+    axios.post(ROOT_URL + "/flickr/"+this.state.tema+" "+this.state.color).then(response => {
+          console.log("la response es: "+response);
+          console.log(response.data);
+            this.setState({fotos: response.data})
+        })
   }
 
   render()
@@ -35,12 +26,10 @@ class Columna extends Component {
     return(
       <div className="columna">
         {
-          this.state.fotos.map(recipe => {
+          this.state.fotos.map((foto,i) => {
                       return (
-                        <div key={recipe.title}>
-                          <Recipe recipe={recipe} ingredients={recipe.Ingredients}
-                           username={this.props.username} password={this.props.password}
-                           title={recipe.title} getRecipes={this.getRecipesByUsername.bind(this)} />
+                        <div key={i} className="divFoto">
+                          <img src={foto} />
                         </div>
                       );
           })

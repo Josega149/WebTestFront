@@ -10,7 +10,7 @@ class Encabezado extends Component {
   render()
   {
     let saltos;
-    if(this.props.cuantos===3)
+    if(this.props.cuantos==="3")
     {
       saltos = (<div><br/><br/><br/></div>);
     }

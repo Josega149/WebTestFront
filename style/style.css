@@ -8,6 +8,9 @@
 #jumbo{
   border-style: solid;
 }
+.divFoto{
+  float:left;
+}
 
 /*.col-md-1{
   border-style: solid;
