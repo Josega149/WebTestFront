@@ -1,0 +1,20 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+#encabezado{
+  font-size: 3em;
+}
+#jumbo{
+  border-style: solid;
+}
+
+/*.col-md-1{
+  border-style: solid;
+}*/
+/**.col-md-3{
+  border-style: solid;
+}*/
+/*.row{
+    border-style: solid;
+}/*/
