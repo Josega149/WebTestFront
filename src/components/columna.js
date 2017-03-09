@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
+import axios from 'axios';
 
-const ROOT_URL = "localhost:3000";
+
+const ROOT_URL = "http://localhost:3000";
 class Columna extends Component {
   constructor(props) {
     super(props);
@@ -10,19 +12,24 @@ class Columna extends Component {
       color:this.props.color,
       fotos:[]
     }
+
   }
 
   traerFotos()
   {
-    axios.post(ROOT_URL + "/flickr/"+this.state.tema+" "+this.state.color).then(response => {
+    axios.get(ROOT_URL + "/flickr/url/"+this.state.tema+","+this.state.color).then(response => {
           console.log("la response es: "+response);
           console.log(response.data);
+          //ya llegan solo las url
             this.setState({fotos: response.data})
         })
   }
 
+
   render()
   {
+    console.log("creando columna de tema "+this.state.tema + "  color"+this.state.color);
+    this.traerFotos();
     return(
       <div className="columna">
         {

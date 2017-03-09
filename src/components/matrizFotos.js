@@ -18,7 +18,7 @@ class MatrizFotos extends Component {
           <div className="col-md-2"><Columna color="RED" tema={this.props.tema}/></div>
           <div className="col-md-2"><Columna color="WHITE" tema={this.props.tema}/></div>
           <div className="col-md-2"><Columna color="GREEN" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="VIOLET" tema={this.props.tema}/></div>
+          <div className="col-md-2"><Columna color="PURPLE" tema={this.props.tema}/></div>
       </div>
     )
   }

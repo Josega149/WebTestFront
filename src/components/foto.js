@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-
-
 class Fotos extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +15,7 @@ class Fotos extends Component {
           <div className="col-md-3"></div>
           <div className="col-md-6" id='encabezado'>{this.props.text}</div>
           <div className="col-md-3"></div>
-          
+
       </div>
     )
   }

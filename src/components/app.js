@@ -12,15 +12,18 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            encabezado:'WELCOME TO FLIKRAMU',
+            encabezado:'WELCOME TO FLICKRAMU',
             tema:'',
             vaEscribiendo:''
         }
+        this.clickPrimary = this.clickPrimary.bind(this);
     }
 
     clickPrimary()
     {
+      console.log("si llega");
       this.setState({tema:this.state.vaEscribiendo});
+      console.log("buscando "+this.state.tema);
     }
     escribe(texto)
     {
@@ -31,6 +34,7 @@ class App extends Component {
       var matriz;
       if(this.state.tema!=='')
       {
+        console.log("crea matriz");
         matriz=(<MatrizFotos tema={this.state.tema}/>);
       }
         return (
@@ -39,15 +43,15 @@ class App extends Component {
                     <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado text="Search" cuantos="3"/>
+                    <Encabezado text="Rainbow" cuantos="3"/>
                 </row>
                 <row className='row'>
-                    <Input name="titulo" type="text"  onTextInput={this.escribe}
-                              placeholder="Text something" value={this.state.titulo}/>
+                    <Input name="titulo" type="text"  onTextInput={this.escribe.bind(this)}
+                              placeholder="Text something" />
                 </row>
                 <row className='row'>
                     <Button bsStyle="primary"
-                      onClick={() => {this.clickPrimary()}}>CLICK</Button>
+                      onClick={() => {this.clickPrimary()}}>Search</Button>
                       <br/>
                 </row>
                 <row className='row'>
