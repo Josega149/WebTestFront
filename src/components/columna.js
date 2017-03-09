@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import {Button, Well} from 'react-bootstrap';
 
 class Columna extends Component {
   constructor(props) {
@@ -9,6 +10,11 @@ class Columna extends Component {
       color:this.props.color,
       fotos:this.props.fotos
     }
+    this.click = this.click.bind(this);
+  }
+  click()
+  {
+      alert("hello");
   }
 
   render()
@@ -20,7 +26,7 @@ class Columna extends Component {
           this.props.fotos.map((foto,i) => {
                       return (
                         <div key={i} className="divFoto">
-                          <img src={foto} />
+                           <Button onClick={()=>{this.click();}}><img src={foto} /></Button>
                         </div>
                       );
           })

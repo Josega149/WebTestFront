@@ -1,7 +1,6 @@
 "use strict";
 import React, {Component} from 'react';
 import axios from 'axios';
-
 import Encabezado from './encabezado';
 import Input from './input.js';
 import MatrizFotos from './matrizFotos.js';
@@ -17,7 +16,7 @@ class App extends Component {
             encabezado:'WELCOME TO FLICKRAMU',
             tema:'',
             vaEscribiendo:'',
-            colores: ["YELLOW","BLUE","PURPLE","RED","GREEN","WHITE"],
+            colores: ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"],
             data:[]
         }
         this.traerFotos = this.traerFotos.bind(this);
