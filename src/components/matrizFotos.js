@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-
 import Columna from './columna.js';
-
 
 class MatrizFotos extends Component {
   constructor(props) {
@@ -13,12 +11,15 @@ class MatrizFotos extends Component {
   {
     return(
       <div>
-          <div className="col-md-2"><Columna color="YELLOW" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="BLUE" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="RED" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="WHITE" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="GREEN" tema={this.props.tema}/></div>
-          <div className="col-md-2"><Columna color="PURPLE" tema={this.props.tema}/></div>
+        {
+          this.props.columnas.map((col,i) => {
+            console.log(this.props.columnas[i]);
+                      return (
+                        <div className="col-md-2"><Columna color={this.props.colores[i]}
+                          tema={this.props.tema}  fotos={this.props.columnas[i]}/></div>
+                      );
+          })
+        }
       </div>
     )
   }
