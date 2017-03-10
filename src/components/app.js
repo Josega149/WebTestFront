@@ -62,7 +62,9 @@ class App extends Component {
       if(this.state.ultimo === deQueHizo)
       {
         //ganaron
-          this.setState({ show: true, ganaron: this.state.ganaron.push(deQueHizo) });
+          var lista = this.state.ganaron;
+          lista.push(deQueHizo);
+          this.setState({ show: true, ganaron:lista });
       }
       this.setState({ultimo:deQueHizo});
     }
