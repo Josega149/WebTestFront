@@ -31,7 +31,7 @@ class App extends Component {
     {
       var dataCol=[];
       var terminaron =0;
-      var arregloNums = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15];
+      var arregloNums = [1,1,2,3,3,4,5,5,6,2,6,7,7,8,8,9,10,10,11,9,11,12,12,4,13,13,14,14,15,15];
       this.state.colores.map((colorActual,i)=>{
         console.log(this.state.vaEscribiendo+" "+colorActual);
         axios.get(ROOT_URL + "/flickr/url/"+this.state.vaEscribiendo+","+colorActual).then(response => {
