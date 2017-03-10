@@ -1,10 +1,27 @@
 # PARCIAL 1 FRONT
-# back-end: https://github.com/Josega149/WebTestBack
-# front-end: https://github.com/Josega149/WebTestFront
+# desplegado en http://webdevp1front.herokuapp.com/
 
+# repositorio back-end: https://github.com/Josega149/WebTestBack
+# repositorio front-end: https://github.com/Josega149/WebTestFront
 
+Para correr el proyecto en heroku:
+    
+    *click en http://webdevp1front.herokuapp.com/
+    * Se ingresa una palabra clave de busqueda en el front
+    * se da SEARCH
 
-Para correr el proyecto:
+Para correr el proyecto localmente (solo front):
+
+    * Se abre en una consola el front
+    * Se le da npm install que instalara todos los paquetes necesarios en node modules
+    * Se les da npm start para iniciar los servicios
+    
+    * El front end se despliega en http://localhost:8081/
+    
+    * Se ingresa una palabra clave de busqueda en el front y se comunica por debajo con back en heroku
+    * se da SEARCH
+    
+Para correr el proyecto localmente (front y back):
 
 
     * Se abre en dos consolas la ubicacion del back y front
@@ -12,6 +29,7 @@ Para correr el proyecto:
     * Crear un archivo .txt con la llave y otro archivo con el secret del api de flickr 
     * Esta es la jerarquia: llaves: modules/APIFlikr/api_key.txt 
     * Esta es la jerarquia: secret: modules/APIFlikr/api_secret.txt
+    * En el front app.js se debe descomentar la ruta de comunicacion con back de localhost y comentar la ruta de heroku.
     * A ambas se les da npm install que instalara todos los paquetes necesarios en node modules
     * A ambas se les da npm start para iniciar los servicios
     
