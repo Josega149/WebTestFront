@@ -7,7 +7,7 @@ import SweetAlert from 'sweetalert-react';
 import MatrizFotos from './matrizFotos.js';
 
 import {Button, Well} from 'react-bootstrap';
-const ROOT_URL = "https://webdevp1back.herokuapp.com/";//"https://localhost:3000";
+const ROOT_URL = "https://webdevp1back.herokuapp.com";//"https://localhost:3000";
 
 
 class App extends Component {
