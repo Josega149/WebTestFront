@@ -22,19 +22,29 @@ class Foto extends Component {
 
   render()
   {
-    return(
-      <div className="foto">
-          <Button clasName="boton" onClick={()=>{this.click();}} >
-            <img src={this.props.url} className="fotoP"/>
-          </Button>
-          <SweetAlert
-            show={this.state.show}
-            title="The number of this image is:"
-            text={this.props.number[0]+" ."}
-            onConfirm={() => this.setState({ show: false })}/>
-      </div>
-    )
+    var gano = false;
+    if(this.props.ganaron === this.props.number[0])
+    {
+      gano = true;
+    }
+            if(gano)
+            {
+                return(<div className="foto">
+                  <img src={this.props.url} className="fotoP" className="ganadores"/></div>);
+            }
+            else
+            {
+                return(<div className="foto">
+                            <Button clasName="boton" onClick={()=>{this.click();}} >
+                              <img src={this.props.url} className="fotoP"/>
+                            </Button>
+                            <SweetAlert
+                              show={this.state.show}
+                              title="The number of this image is:"
+                              text={this.props.number[0]+" ."}
+                              onConfirm={() => this.setState({ show: false })}/>
+                        </div>);
+            }
   }
-
 }
 export default Foto;

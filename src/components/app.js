@@ -20,8 +20,8 @@ class App extends Component {
             colores: ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"],
             data:[],
             ultimo:'',
-            penultimo:'',
-            show:false
+            show:false,
+            ganaron:-1
         }
         this.traerFotos = this.traerFotos.bind(this);
         this.unHijoHizoClick = this.unHijoHizoClick.bind(this);
@@ -61,7 +61,8 @@ class App extends Component {
     {
       if(this.state.ultimo === deQueHizo)
       {
-          this.setState({ show: true });
+        //ganaron
+          this.setState({ show: true, ganaron:deQueHizo });
       }
       this.setState({ultimo:deQueHizo});
     }
@@ -78,7 +79,8 @@ class App extends Component {
         console.log("crea matriz con tema "+ this.state.tema);
         matriz= (<MatrizFotos tema={this.state.tema} columnas={this.state.data}
                               colores={this.state.colores}
-                              unHijoHizoClick={this.unHijoHizoClick} />);
+                              unHijoHizoClick={this.unHijoHizoClick}
+                              ganaron={this.ganaron}/>);
       }
         return (
             <div>

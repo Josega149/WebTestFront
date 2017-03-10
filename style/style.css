@@ -13,6 +13,9 @@
 #jumbo{
   border-style: solid;
 }
+#ganadores{
+  filter: grayscale(100%); 
+}
 .foto{
   float:left;
 

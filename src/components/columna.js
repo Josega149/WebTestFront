@@ -24,7 +24,7 @@ class Columna extends Component {
                       return (
                         <div key={i} className="divFoto">
                             <Foto url={foto[0]} number={foto[1]}
-                              unHijoHizoClick={this.props.unHijoHizoClick} />
+                              unHijoHizoClick={this.props.unHijoHizoClick} ganaron={this.props.ganaron} />
                         </div>
                       );
           })
