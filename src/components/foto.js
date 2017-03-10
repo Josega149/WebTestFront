@@ -23,7 +23,7 @@ class Foto extends Component {
   render()
   {
     var gano = false;
-    if(this.props.ganaron === this.props.number[0])
+    if(this.props.ganaron.indexOf(this.props.number[0]) !== -1)
     {
       gano = true;
     }

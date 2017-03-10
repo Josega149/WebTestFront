@@ -21,7 +21,7 @@ class App extends Component {
             data:[],
             ultimo:'',
             show:false,
-            ganaron:-1
+            ganaron:[-1]
         }
         this.traerFotos = this.traerFotos.bind(this);
         this.unHijoHizoClick = this.unHijoHizoClick.bind(this);
@@ -62,7 +62,7 @@ class App extends Component {
       if(this.state.ultimo === deQueHizo)
       {
         //ganaron
-          this.setState({ show: true, ganaron:deQueHizo });
+          this.setState({ show: true, ganaron: this.state.ganaron.push(deQueHizo) });
       }
       this.setState({ultimo:deQueHizo});
     }
@@ -80,7 +80,7 @@ class App extends Component {
         matriz= (<MatrizFotos tema={this.state.tema} columnas={this.state.data}
                               colores={this.state.colores}
                               unHijoHizoClick={this.unHijoHizoClick}
-                              ganaron={this.ganaron}/>);
+                              ganaron={this.state.ganaron}/>);
       }
         return (
             <div>

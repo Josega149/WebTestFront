@@ -13,8 +13,8 @@
 #jumbo{
   border-style: solid;
 }
-#ganadores{
-  filter: grayscale(100%); 
+.ganadores{
+  filter: grayscale(300%);
 }
 .foto{
   float:left;
