@@ -1,8 +1,13 @@
 * {
-  font-family: 'Quicksand', sans-serif;
+
+  font-family: 'Slabo 27px', serif;
   text-align: center;
 }
 #encabezado{
+  font-size: 3em;
+  font-family: 'Gafata', sans-serif;
+}
+#encabezado1{
   font-size: 3em;
 }
 #jumbo{

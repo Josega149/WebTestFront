@@ -26,15 +26,14 @@ class App extends Component {
     {
       var dataCol=[];
       var terminaron =0;
-      for(var i=0;i< 6;i++)
-      {
-        var colorActual = this.state.colores[i];
+
+      this.state.colores.map((colorActual,i)=>{
         console.log(this.state.vaEscribiendo+" "+colorActual);
         axios.get(ROOT_URL + "/flickr/url/"+this.state.vaEscribiendo+","+colorActual).then(response => {
               console.log("la response es: "+response);
               //console.log(response.data);
               //ya llegan solo las url
-              dataCol.push(response.data);
+              dataCol[i] = (response.data);
               terminaron +=1;
               if(terminaron === 6)
               {
@@ -42,8 +41,8 @@ class App extends Component {
                   this.setState({tema:this.state.vaEscribiendo,data:dataCol});
               }
             })
-        
-      }
+
+      });
     }
 
     escribe(texto)
@@ -65,7 +64,7 @@ class App extends Component {
                     <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado text="Rainbow" cuantos="3"/>
+                    <Encabezado id="encabezado1" text="Rainbow" cuantos="3"/>
                 </row>
                 <row className='row'>
                     <Input name="titulo" type="text"  onTextInput={this.escribe.bind(this)}
