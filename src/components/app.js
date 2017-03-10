@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Encabezado from './encabezado';
 import Input from './input.js';
+import SweetAlert from 'sweetalert-react';
 import MatrizFotos from './matrizFotos.js';
 
 import {Button, Well} from 'react-bootstrap';
@@ -19,7 +20,8 @@ class App extends Component {
             colores: ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"],
             data:[],
             ultimo:'',
-            penultimo:''
+            penultimo:'',
+            show:false
         }
         this.traerFotos = this.traerFotos.bind(this);
         this.unHijoHizoClick = this.unHijoHizoClick.bind(this);
@@ -59,7 +61,7 @@ class App extends Component {
     {
       if(this.state.ultimo === deQueHizo)
       {
-          alert("BIENNNNN");
+          this.setState({ show: true });
       }
       this.setState({ultimo:deQueHizo});
     }
@@ -84,7 +86,7 @@ class App extends Component {
                     <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado id="encabezado1" text="Memory game: Click in any image and try to find its couple number." cuantos="3"/>
+                    <h3> Memory game: Click in any image and try to find its pair (number).</h3>
                     <br/><h5>by Jose Gabriel Tamura L</h5>
                 </row>
                 <row className='row'>
@@ -95,6 +97,7 @@ class App extends Component {
                     <Button bsStyle="primary"
                       onClick={() => {this.traerFotos()}}>Search</Button>
                       <br/>
+                      <br/>
                       <h5>Sometimes it takes few seconds to search</h5>
 
                 </row>
@@ -103,6 +106,11 @@ class App extends Component {
                           {matriz}
                     </div>
               </row>
+              <SweetAlert
+                show={this.state.show}
+                title="POINT"
+                text="You match a pair! keep going :)"
+                onConfirm={() => this.setState({ show: false })}/>
             </div>
         )
     }
