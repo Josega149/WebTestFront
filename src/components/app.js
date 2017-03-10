@@ -26,18 +26,25 @@ class App extends Component {
     {
       var dataCol=[];
       var terminaron =0;
-
+      var arregloNums = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15];
       this.state.colores.map((colorActual,i)=>{
         console.log(this.state.vaEscribiendo+" "+colorActual);
         axios.get(ROOT_URL + "/flickr/url/"+this.state.vaEscribiendo+","+colorActual).then(response => {
               console.log("la response es: "+response);
               //console.log(response.data);
               //ya llegan solo las url
-              dataCol[i] = (response.data);
+              var url = [];
+              for(var j=0; j< response.data.length;j++)
+              {
+                url[j] = [response.data[j],arregloNums.splice(0,1) ];
+              }
+              dataCol[i] = url;
+
               terminaron +=1;
               if(terminaron === 6)
               {
                   console.log(" terminaron las consultass");
+                  console.log(dataCol);
                   this.setState({tema:this.state.vaEscribiendo,data:dataCol});
               }
             })
@@ -64,7 +71,7 @@ class App extends Component {
                     <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado id="encabezado1" text="Rainbow" cuantos="3"/>
+                    <Encabezado id="encabezado1" text="Rainbow: Click in any image and try to find its couple number" cuantos="3"/>
                 </row>
                 <row className='row'>
                     <Input name="titulo" type="text"  onTextInput={this.escribe.bind(this)}
@@ -76,14 +83,10 @@ class App extends Component {
                       <br/>
                 </row>
                 <row className='row'>
-                    <div className="col-md-1"></div>
-                    <div className="col-md-10" id='jumbo'>
+                    <div className="col-md-12" id='jumbo'>
                           {matriz}
                     </div>
-                    <div className="col-md-1"><br/><br/><br/><br/></div>
               </row>
-
-
             </div>
         )
     }

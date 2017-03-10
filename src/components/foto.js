@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import SweetAlert from 'sweetalert-react';
+
 import {Button, Well} from 'react-bootstrap';
 
 class Foto extends Component {
@@ -11,25 +12,25 @@ class Foto extends Component {
     }
     this.click = this.click.bind(this);
   }
-  
+
   click()
   {
-      alert("hello");
+      //alert("hello");
   }
 
 
   render()
-  {  //recuperado de https://facebook.github.io/react/docs/dom-elements.html
+  {
 
     return(
       <div className="foto">
-          <Button clasName="boton" onClick={()=>{this.click();}} ><img src={this.props.url} /></Button>
+          <Button clasName="boton" onClick={()=>{this.click();
+            this.setState({ show: true })}} ><img src={this.props.url} className="fotoP"/></Button>
           <SweetAlert
             show={this.state.show}
-            title="Demo"
-            text="SweetAlert in React"
-            onConfirm={() => this.setState({ show: false })}
-          />
+            title="The number of this image is:"
+            text={this.props.number[0]+" ."}
+            onConfirm={() => this.setState({ show: false })}/>
       </div>
     )
   }

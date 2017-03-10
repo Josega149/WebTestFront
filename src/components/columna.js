@@ -23,7 +23,7 @@ class Columna extends Component {
           this.props.fotos.map((foto,i) => {
                       return (
                         <div key={i} className="divFoto">
-                            <Foto url={foto} />
+                            <Foto url={foto[0]} number={foto[1]}/>
                         </div>
                       );
           })
