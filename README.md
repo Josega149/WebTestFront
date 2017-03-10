@@ -5,7 +5,13 @@
 
 
 Para correr el proyecto:
+
+
     * Se abre en dos consolas la ubicacion del back y front
+    * En el back se crea una carpeta dentro de modules llamada APIFlikr sin c flickr.
+    * Crear un archivo .txt con la llave y otro archivo con el secret del api de flickr 
+    * Esta es la jerarquia: llaves: modules/APIFlikr/api_key.txt 
+    * Esta es la jerarquia: secret: modules/APIFlikr/api_secret.txt
     * A ambas se les da npm install que instalara todos los paquetes necesarios en node modules
     * A ambas se les da npm start para iniciar los servicios
     
