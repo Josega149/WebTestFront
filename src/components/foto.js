@@ -9,10 +9,7 @@ class Foto extends Component {
     }
     this.click = this.click.bind(this);
   }
-  //recuperado de https://facebook.github.io/react/docs/dom-elements.html
-  const divStyle = {
-    color: 'blue',
-  };
+
 
 
   click()
@@ -20,11 +17,13 @@ class Foto extends Component {
       alert("hello");
   }
 
+
   render()
-  {
+  {  //recuperado de https://facebook.github.io/react/docs/dom-elements.html
+
     return(
-      <div className="Foto">
-          <Button onClick={()=>{this.click();}}><img src={this.props.url} style={divStyle}/></Button>
+      <div className="foto">
+          <Button clasName="boton" onClick={()=>{this.click();}} ><img src={this.props.url} /></Button>
       </div>
     )
   }

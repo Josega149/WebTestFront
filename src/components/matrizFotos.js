@@ -15,7 +15,7 @@ class MatrizFotos extends Component {
           this.props.columnas.map((col,i) => {
             console.log(this.props.columnas[i]);
                       return (
-                        <div className="col-md-2"><Columna color={this.props.colores[i]}
+                        <div className="col-md-2" key={i}><Columna color={this.props.colores[i]}
                           tema={this.props.tema}  fotos={this.props.columnas[i]}/></div>
                       );
           })

@@ -8,12 +8,16 @@
 #jumbo{
   border-style: solid;
 }
-.divFoto{
+.foto{
   float:left;
 
   margin: 1em;
-  width: 7em;
+  width: 90%;
   box-sizing: border-box;
+}
+.boton{
+  background-color: white !important;
+  border-style: solid !important;
 }
 
 /*.col-md-1{
