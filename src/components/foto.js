@@ -15,17 +15,18 @@ class Foto extends Component {
 
   click()
   {
-      //alert("hello");
+      this.props.unHijoHizoClick(this.props.number[0]);
+      this.setState({ show: true });
   }
 
 
   render()
   {
-
     return(
       <div className="foto">
-          <Button clasName="boton" onClick={()=>{this.click();
-            this.setState({ show: true })}} ><img src={this.props.url} className="fotoP"/></Button>
+          <Button clasName="boton" onClick={()=>{this.click();}} >
+            <img src={this.props.url} className="fotoP"/>
+          </Button>
           <SweetAlert
             show={this.state.show}
             title="The number of this image is:"

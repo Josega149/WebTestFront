@@ -23,7 +23,8 @@ class Columna extends Component {
           this.props.fotos.map((foto,i) => {
                       return (
                         <div key={i} className="divFoto">
-                            <Foto url={foto[0]} number={foto[1]}/>
+                            <Foto url={foto[0]} number={foto[1]}
+                              unHijoHizoClick={this.props.unHijoHizoClick} />
                         </div>
                       );
           })

@@ -17,9 +17,12 @@ class App extends Component {
             tema:'',
             vaEscribiendo:'',
             colores: ["RED","ORANGE","YELLOW","GREEN","BLUE","PURPLE"],
-            data:[]
+            data:[],
+            ultimo:'',
+            penultimo:''
         }
         this.traerFotos = this.traerFotos.bind(this);
+        this.unHijoHizoClick = this.unHijoHizoClick.bind(this);
     }
 
     traerFotos()
@@ -52,6 +55,15 @@ class App extends Component {
       });
     }
 
+    unHijoHizoClick(deQueHizo)
+    {
+      if(this.state.ultimo === deQueHizo)
+      {
+          alert("BIENNNNN");
+      }
+      this.setState({ultimo:deQueHizo});
+    }
+
     escribe(texto)
     {
       console.log(texto);
@@ -63,7 +75,8 @@ class App extends Component {
       {
         console.log("crea matriz con tema "+ this.state.tema);
         matriz= (<MatrizFotos tema={this.state.tema} columnas={this.state.data}
-                             colores={this.state.colores}/>);
+                              colores={this.state.colores}
+                              unHijoHizoClick={this.unHijoHizoClick} />);
       }
         return (
             <div>
@@ -71,7 +84,8 @@ class App extends Component {
                     <Encabezado text={this.state.encabezado} cuantos="5"/>
                 </row>
                 <row className='row'>
-                    <Encabezado id="encabezado1" text="Rainbow: Click in any image and try to find its couple number" cuantos="3"/>
+                    <Encabezado id="encabezado1" text="Memory game: Click in any image and try to find its couple number." cuantos="3"/>
+                    <br/><h5>by Jose Gabriel Tamura L</h5>
                 </row>
                 <row className='row'>
                     <Input name="titulo" type="text"  onTextInput={this.escribe.bind(this)}
@@ -81,6 +95,8 @@ class App extends Component {
                     <Button bsStyle="primary"
                       onClick={() => {this.traerFotos()}}>Search</Button>
                       <br/>
+                      <h5>Sometimes it takes few seconds to search</h5>
+
                 </row>
                 <row className='row'>
                     <div className="col-md-12" id='jumbo'>
