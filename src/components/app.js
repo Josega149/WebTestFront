@@ -42,6 +42,7 @@ class App extends Component {
                   this.setState({tema:this.state.vaEscribiendo,data:dataCol});
               }
             })
+        
       }
     }
 
