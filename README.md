@@ -4,6 +4,12 @@
 # repositorio back-end: https://github.com/Josega149/WebTestBack
 # repositorio front-end: https://github.com/Josega149/WebTestFront
 
+![1 image](http://i.imgur.com/uoKuTIo.jpg)
+#Sobre el proyecto
+Un proyecto web que permite buscar imagenes en flickr por relevancia según el tema escogido. Esta construido para traer
+imagenenes de diferentes sobre el mismo tema pero de diferente color (rojo, naranja, amarillo, verde, azul, morado ).
+
+
 Para correr el proyecto en heroku:
     
     *click en http://webdevp1front.herokuapp.com/
@@ -47,7 +53,9 @@ comparten el mismo numero entre 1 y 15. Una vez descubiertas las dos, se debe un
 (seguido) para que valga el punto. A medida que se van descubriendo pares, se van tornando grises y se debe seguir 
 adivinando hasta que todas las imagenes estan en gris. Cabe aclarar que desarrolle e implemente el juego desde 0 aunque (claramente) no es invencion mia.
 
-
+![2 image](http://i.imgur.com/aHgNdqV.jpg)
+![3 image](http://imgur.com/LfBp4e6)
+![4 image](http://i.imgur.com/gs3t8n7.jpg)
 
 En el back end hay una clase principal en ./modules/index.js que es a donde llegan todas las peticiones del backend.
 Hay un solo metodo que se usa desde el front end: (GET) /flickr/url/:term.  Este metodo recupera las llaves de la API de
