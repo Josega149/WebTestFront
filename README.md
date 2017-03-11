@@ -54,7 +54,7 @@ comparten el mismo numero entre 1 y 15. Una vez descubiertas las dos, se debe un
 adivinando hasta que todas las imagenes estan en gris. Cabe aclarar que desarrolle e implemente el juego desde 0 aunque (claramente) no es invencion mia.
 
 ![2 image](http://i.imgur.com/aHgNdqV.jpg)
-![3 image](http://imgur.com/LfBp4e6)
+![3 image](http://i.imgur.com/xKY0Itq.jpg)
 ![4 image](http://i.imgur.com/gs3t8n7.jpg)
 
 En el back end hay una clase principal en ./modules/index.js que es a donde llegan todas las peticiones del backend.
